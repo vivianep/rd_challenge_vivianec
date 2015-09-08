@@ -13,15 +13,19 @@ class Rd_challenge
 
 	def createLead(name,lastName,email,company,job_title,phone,website)
 		
-		#contact_class = client.materialize("Contact")
-		
 		contact_class = @client.materialize("Contact")
 		lead_class=@client.materialize("Lead")
 		lead=Lead.new
 		leads=Lead.all
 		user= Contact.first
-		lead.Name = name
-		lead.LastName = lastName
+		if(name == ""||lastName == ""||email =="" ||phone=="")
+			return "Some obrigatory fields are empty"
+		end
+		lead.Name = name.capitalize
+		lead.LastName = lastName.capitalize
+		if !(email.include? "@")
+			return "Invalid email" 
+		end
 		lead.Email = email
 		lead.Company = company
 		lead.Title = job_title
@@ -30,17 +34,18 @@ class Rd_challenge
 		lead.OwnerId=user.OwnerId
 		lead.IsConverted=false
 		lead.IsUnreadByOwner=true
-
-		#lead.save
+		lead.save
+		return "Lead saved"
+		
 	end
 
-	def getLeads()
+	def getLeads
 
 		lead_class=@client.materialize("Lead")
-		lead=Lead.new
 		leads=Lead.all
 		return leads
 	end
 
 	 
 end
+
