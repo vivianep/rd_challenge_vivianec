@@ -1,8 +1,6 @@
 # RdChallengeVivianec
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rd_challenge_vivianec`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem was part of the selection process from the company RD. The main of the functionality RdChallengeVivianec is to insert new Leads into the user's account on Salesforce. 
 
 ## Installation
 
@@ -22,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After installed the gem , it is possible to instantiate the class Rd_challenge. Which contains the functionalities of the gem,in methods:
+    
+    
 
 ## Development
 
@@ -32,5 +32,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rd_challenge_vivianec.
+Bug reports and pull requests are welcome on GitHub at https://github.com/vivianep/rd_challenge_vivianec.
 
