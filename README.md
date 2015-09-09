@@ -1,6 +1,6 @@
 # RdChallengeVivianec
 
-This gem was part of the selection process from the company RD. The main of the functionality RdChallengeVivianec is to insert new Leads into the user's account on Salesforce. 
+This gem was part of the selection process from the company RD. The main functionality that  RdChallengeVivianec was addressed for were to insert new Leads into the user's account on Salesforce. 
 
 ## Installation
 
