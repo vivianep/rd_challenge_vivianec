@@ -1,8 +1,12 @@
-require "rd_challenge_vivianec/version"
+require "rd_challenge_vivianec/version.rb"
 require "databasedotcom"
-require "databasedotcom-rails"
 
 
+=begin
+This class makes the connection with salesforce, to make the connection with salesforce it is necessary to provide username,password, and secret token.
+Two operations are implemented: create Lead and get Leads current stored, on the user account.
+
+=end
 class Rd_challenge
 
 		
@@ -13,17 +17,17 @@ class Rd_challenge
 
 	def createLead(name,lastName,email,company,job_title,phone,website)
 		
-		contact_class = @client.materialize("Contact")
-		lead_class=@client.materialize("Lead")
-		lead=Lead.new
-		leads=Lead.all
-		user= Contact.first
+		contact_class = @client.materialize("Contact")#materialize Class Contact
+		lead_class=@client.materialize("Lead")#materialize Class Lead
+		lead=Lead.new #get an instance of lead
+		user= Contact.first 
+		#tests if any of the fields Name , LastName, email or phone are empty
 		if(name == ""||lastName == ""||email =="" ||phone=="")
 			return "Some obrigatory fields are empty"
 		end
-		lead.Name = name.capitalize
+		lead.Name = name.capitalize #makes the first letter,capital
 		lead.LastName = lastName.capitalize
-		if !(email.include? "@")
+		if !(email.include? "@") #check if email is valide
 			return "Invalid email" 
 		end
 		lead.Email = email
@@ -34,11 +38,12 @@ class Rd_challenge
 		lead.OwnerId=user.OwnerId
 		lead.IsConverted=false
 		lead.IsUnreadByOwner=true
-		lead.save
+		lead.save #insert lead on salesforce
 		return "Lead saved"
 		
 	end
 
+	#return all the leads stored on salesforce
 	def getLeads
 
 		lead_class=@client.materialize("Lead")
