@@ -35,6 +35,12 @@ After installed the gem , it is possible to instantiate the class Rd_challenge. 
 The tests were made with rspec, and they basically tests the integrity of the information provided.So to run the test you must execute:
 
        rspec spec
+Implemented tests:
+
+    - Check if a email is valid
+    - Check if a new Lead was saved 
+    - Check if fields Name , LastName, Email or Phone are empty
+
 ## Development
 
 
